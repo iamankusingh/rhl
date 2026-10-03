@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drivers - RHL ERP</title>
+
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              blue: {
+                50: "#EEF3FF",
+                600: "#1D5FE0",
+                800: "#0B3B8C",
+              },
+              gold: {
+                100: "#FBF1DA",
+                500: "#D4A017",
+              },
+              ink: {
+                400: "#94A3B8",
+                600: "#475569",
+                900: "#0F172A",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Space Grotesk", "sans-serif"],
+            },
+            boxShadow: {
+              "soft-blue": "0 10px 40px -10px rgba(29, 95, 224, 0.15)",
+              glow: "0 0 20px rgba(212, 160, 23, 0.4)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="./erp.css" />
+  </head>
+
+  <body
+    class="bg-slate-50 text-ink-600 font-sans antialiased overflow-hidden flex h-screen"
+  >
+    <!-- Sidebar -->
+    <aside
+      id="sidebar"
+      class="bg-white border-r border-slate-200 h-full flex flex-col transition-all duration-300 w-64 shrink-0"
+    >
+      <!-- Header -->
+      <div
+        class="h-16 flex items-center justify-between px-4 border-b border-slate-100"
+      >
+        <a
+          href="./index.html"
+          class="flex items-center gap-3 sidebar-brand overflow-hidden"
+        >
+          <div
+            class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shrink-0"
+          >
+            <img
+              src="./assets/logo.png"
+              alt="RHL Logo"
+              class="h-4 w-4 object-contain invert brightness-0"
+            />
+          </div>
+          <span
+            class="font-heading font-black text-xl text-ink-900 tracking-tight whitespace-nowrap"
+            >RHL ERP</span
+          >
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
+        <a
+          href="./dashboard.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-ink-900 hover:bg-slate-100 font-medium group transition-colors"
+        >
+          <svg
+            class="w-5 h-5 shrink-0 text-slate-400 group-hover:text-ink-600 transition-colors"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+            ></path>
+          </svg>
+          <span class="sidebar-text whitespace-nowrap">Dashboard</span>
+        </a>
+        <a
+          href="./vehicles.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-ink-900 hover:bg-slate-100 font-medium group transition-colors"
+        >
+          <svg
+            class="w-5 h-5 shrink-0 text-slate-400 group-hover:text-ink-600 transition-colors"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+            ></path>
+          </svg>
+          <span class="sidebar-text whitespace-nowrap">Vehicles</span>
+        </a>
+        <a
+          href="./drivers.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-50 text-blue-600 font-medium group transition-colors"
+        >
+          <svg
+            class="w-5 h-5 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+            ></path>
+          </svg>
+          <span class="sidebar-text whitespace-nowrap">Drivers</span>
+        </a>
+        <a
+          href="./documents.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-ink-900 hover:bg-slate-100 font-medium group transition-colors"
+        >
+          <svg
+            class="w-5 h-5 shrink-0 text-slate-400 group-hover:text-ink-600 transition-colors"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            ></path>
+          </svg>
+          <span class="sidebar-text whitespace-nowrap">Documents</span>
+        </a>
+        <a
+          href="./customers.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-ink-900 hover:bg-slate-100 font-medium group transition-colors"
+        >
+          <svg
+            class="w-5 h-5 shrink-0 text-slate-400 group-hover:text-ink-600 transition-colors"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+            ></path>
+          </svg>
+          <span class="sidebar-text whitespace-nowrap">Customers</span>
+        </a>
+        <a
+          href="./report.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-ink-900 hover:bg-slate-100 font-medium group transition-colors"
+        >
+          <svg
+            class="w-5 h-5 shrink-0 text-slate-400 group-hover:text-ink-600 transition-colors"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+            ></path>
+          </svg>
+          <span class="sidebar-text whitespace-nowrap">Report</span>
+        </a>
+      </nav>
+
+      <!-- User Profile -->
+      <div class="p-4 border-t border-slate-100">
+        <a href="#" class="flex items-center gap-3 group">
+          <div
+            class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden shrink-0 border border-slate-300"
+          >
+            <img
+              src="https://api.dicebear.com/6.x/initials/svg?seed=JD&backgroundColor=1D5FE0&textColor=ffffff"
+              alt="User"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="sidebar-text overflow-hidden">
+            <p
+              class="text-sm font-bold text-ink-900 truncate group-hover:text-blue-600 transition-colors"
+            >
+              John Doe
+            </p>
+            <p class="text-xs text-slate-500 truncate">Fleet Manager</p>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main
+      class="p-2 flex-1 flex flex-col h-full overflow-hidden bg-slate-50/50"
+    >
+      <!-- Topbar -->
+      <header
+        class="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-white shrink-0 rounded-t-xl"
+      >
+        <div class="flex items-center gap-4">
+          <button
+            id="sidebar-toggle"
+            class="p-1.5 rounded-lg text-slate-400 hover:text-ink-900 hover:bg-slate-100 transition-colors lg:hidden"
+            aria-label="Toggle Sidebar"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+          <h2 class="font-heading font-black text-xl text-ink-900">
+            Drivers Directory
+          </h2>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="relative hidden sm:block">
+            <svg
+              class="w-5 h-5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              ></path>
+            </svg>
+            <input
+              type="text"
+              placeholder="Search drivers..."
+              class="pl-10 pr-4 py-2 bg-slate-100 border-none rounded-lg text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none w-64 text-ink-900"
+            />
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="flex-1 overflow-y-auto p-6 md:p-8">
+        <!-- Drivers KPI Section -->
+        <section class="mb-10">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+          >
+            <div
+              class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex items-center gap-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-slate-500 mb-0.5">
+                  Total Drivers
+                </p>
+                <p class="text-2xl font-black font-heading text-ink-900">50</p>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex items-center gap-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-green-50 text-green-600 flex items-center justify-center shrink-0"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-slate-500 mb-0.5">
+                  Available
+                </p>
+                <p class="text-2xl font-black font-heading text-ink-900">12</p>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex items-center gap-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-gold-50 text-gold-500 flex items-center justify-center shrink-0"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-slate-500 mb-0.5">On Trip</p>
+                <p class="text-2xl font-black font-heading text-ink-900">35</p>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex items-center gap-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center shrink-0"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-slate-500 mb-0.5">
+                  On Leave
+                </p>
+                <p class="text-2xl font-black font-heading text-ink-900">3</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Drivers Table Section -->
+        <section
+          class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col"
+        >
+          <div
+            class="p-5 md:p-6 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+          >
+            <h3 class="font-bold text-ink-900 text-lg">Drivers List</h3>
+            <button
+              class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-lg font-bold text-sm transition-colors flex items-center justify-center gap-2 shadow-soft-blue w-full sm:w-auto"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                ></path>
+              </svg>
+              Add Driver
+            </button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse whitespace-nowrap">
+              <thead>
+                <tr
+                  class="bg-slate-50 text-slate-500 text-xs uppercase tracking-wider border-b border-slate-200"
+                >
+                  <th class="px-6 py-4 font-bold">Driver ID</th>
+                  <th class="px-6 py-4 font-bold">Name & Contact</th>
+                  <th class="px-6 py-4 font-bold">License Expiry</th>
+                  <th class="px-6 py-4 font-bold">Status</th>
+                  <th class="px-6 py-4 font-bold">Assigned Vehicle</th>
+                  <th class="px-6 py-4 font-bold text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 text-sm">
+                <tr class="hover:bg-slate-50/50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-ink-900">DR-104</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden shrink-0"
+                      >
+                        <img
+                          src="https://api.dicebear.com/6.x/initials/svg?seed=RK&backgroundColor=1D5FE0&textColor=ffffff"
+                          alt="Rajesh Kumar"
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p class="font-bold text-ink-900">Rajesh Kumar</p>
+                        <p class="text-xs text-slate-500">+91 98765 43210</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <p class="font-medium text-slate-600">HMV</p>
+                    <p class="text-xs text-red-500 font-medium">
+                      Expires in 12 days
+                    </p>
+                  </td>
+                  <td class="px-6 py-4">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-gold-50 text-gold-600 border border-gold-200"
+                    >
+                      <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
+                      On Trip
+                    </span>
+                  </td>
+                  <td class="px-6 py-4">
+                    <span class="font-bold text-ink-900">TR-042</span>
+                    <span class="text-xs text-slate-500 ml-1"
+                      >(Volvo FH16)</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 text-right">
+                    <button
+                      class="text-blue-600 hover:text-blue-800 font-bold text-xs uppercase tracking-wide"
+                    >
+                      Edit
+                    </button>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-slate-50/50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-ink-900">DR-089</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden shrink-0"
+                      >
+                        <img
+                          src="https://api.dicebear.com/6.x/initials/svg?seed=AS&backgroundColor=1D5FE0&textColor=ffffff"
+                          alt="Amit Singh"
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p class="font-bold text-ink-900">Amit Singh</p>
+                        <p class="text-xs text-slate-500">+91 91234 56789</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <p class="font-medium text-slate-600">HMV, Crane</p>
+                    <p class="text-xs text-slate-500">Oct 2028</p>
+                  </td>
+                  <td class="px-6 py-4">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-green-50 text-green-700 border border-green-200"
+                    >
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-green-500"
+                      ></span>
+                      Available
+                    </span>
+                  </td>
+                  <td class="px-6 py-4">
+                    <span class="text-slate-400 italic font-medium"
+                      >Unassigned</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 text-right">
+                    <button
+                      class="text-blue-600 hover:text-blue-800 font-bold text-xs uppercase tracking-wide"
+                    >
+                      Edit
+                    </button>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-slate-50/50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-ink-900">DR-215</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden shrink-0"
+                      >
+                        <img
+                          src="https://api.dicebear.com/6.x/initials/svg?seed=SM&backgroundColor=1D5FE0&textColor=ffffff"
+                          alt="Suresh M."
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p class="font-bold text-ink-900">Suresh M.</p>
+                        <p class="text-xs text-slate-500">+91 99887 76655</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <p class="font-medium text-slate-600">HMV</p>
+                    <p class="text-xs text-slate-500">Jan 2027</p>
+                  </td>
+                  <td class="px-6 py-4">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-gold-50 text-gold-600 border border-gold-200"
+                    >
+                      <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
+                      On Trip
+                    </span>
+                  </td>
+                  <td class="px-6 py-4">
+                    <span class="font-bold text-ink-900">HY-105</span>
+                    <span class="text-xs text-slate-500 ml-1"
+                      >(Escorts TRX 15)</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 text-right">
+                    <button
+                      class="text-blue-600 hover:text-blue-800 font-bold text-xs uppercase tracking-wide"
+                    >
+                      Edit
+                    </button>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-slate-50/50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-ink-900">DR-042</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden shrink-0"
+                      >
+                        <img
+                          src="https://api.dicebear.com/6.x/initials/svg?seed=VS&backgroundColor=1D5FE0&textColor=ffffff"
+                          alt="Vikram Singh"
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p class="font-bold text-ink-900">Vikram Singh</p>
+                        <p class="text-xs text-slate-500">+91 93333 44444</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <p class="font-medium text-slate-600">LMV</p>
+                    <p class="text-xs text-slate-500">Mar 2029</p>
+                  </td>
+                  <td class="px-6 py-4">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-600 border border-slate-200"
+                    >
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-slate-400"
+                      ></span>
+                      On Leave
+                    </span>
+                  </td>
+                  <td class="px-6 py-4">
+                    <span class="text-slate-400 italic font-medium"
+                      >Unassigned</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 text-right">
+                    <button
+                      class="text-blue-600 hover:text-blue-800 font-bold text-xs uppercase tracking-wide"
+                    >
+                      Edit
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="./erp.js"></script>
+  </body>
+</html>
+

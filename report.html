@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reports - RHL ERP</title>
+
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              blue: {
+                50: "#EEF3FF",
+                600: "#1D5FE0",
+                800: "#0B3B8C",
+              },
+              gold: {
+                100: "#FBF1DA",
+                500: "#D4A017",
+              },
+              ink: {
+                400: "#94A3B8",
+                600: "#475569",
+                900: "#0F172A",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Space Grotesk", "sans-serif"],
+            },
+            boxShadow: {
+              "soft-blue": "0 10px 40px -10px rgba(29, 95, 224, 0.15)",
+              glow: "0 0 20px rgba(212, 160, 23, 0.4)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="./erp.css" />
+  </head>
+
+  <body
+    class="bg-slate-50 text-ink-600 font-sans antialiased overflow-hidden flex h-screen"
+  >
+    <!-- Sidebar -->
+    <aside
+      id="sidebar"
+      class="bg-white border-r border-slate-200 h-full flex flex-col transition-all duration-300 w-64 shrink-0"
+    >
+      <!-- Header -->
+      <div
+        class="h-16 flex items-center justify-between px-4 border-b border-slate-100"
+      >
+        <a
+          href="./index.html"
+          class="flex items-center gap-3 sidebar-brand overflow-hidden"
+        >
+          <div
+            class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shrink-0"
+          >
+            <img
+              src="./assets/logo.png"
+              alt="RHL Logo"
+              class="h-4 w-4 object-contain invert brightness-0"
+            />
+          </div>
+          <span
+            class="font-heading font-black text-xl text-ink-900 tracking-tight whitespace-nowrap"
+            >RHL ERP</span
+          >
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
+        <a
+          href="./dashboard.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-ink-900 hover:bg-slate-100 font-medium group transition-colors"
+        >
+          <svg
+            class="w-5 h-5 shrink-0 text-slate-400 group-hover:text-ink-600 transition-colors"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+            ></path>
+          </svg>
+          <span class="sidebar-text whitespace-nowrap">Dashboard</span>
+        </a>
+        <a
+          href="./vehicles.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-ink-900 hover:bg-slate-100 font-medium group transition-colors"
+        >
+          <svg
+            class="w-5 h-5 shrink-0 text-slate-400 group-hover:text-ink-600 transition-colors"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+            ></path>
+          </svg>
+          <span class="sidebar-text whitespace-nowrap">Vehicles</span>
+        </a>
+        <a
+          href="./drivers.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-ink-900 hover:bg-slate-100 font-medium group transition-colors"
+        >
+          <svg
+            class="w-5 h-5 shrink-0 text-slate-400 group-hover:text-ink-600 transition-colors"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+            ></path>
+          </svg>
+          <span class="sidebar-text whitespace-nowrap">Drivers</span>
+        </a>
+        <a
+          href="./documents.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-ink-900 hover:bg-slate-100 font-medium group transition-colors"
+        >
+          <svg
+            class="w-5 h-5 shrink-0 text-slate-400 group-hover:text-ink-600 transition-colors"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            ></path>
+          </svg>
+          <span class="sidebar-text whitespace-nowrap">Documents</span>
+        </a>
+        <a
+          href="./customers.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 hover:text-ink-900 hover:bg-slate-100 font-medium group transition-colors"
+        >
+          <svg
+            class="w-5 h-5 shrink-0 text-slate-400 group-hover:text-ink-600 transition-colors"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+            ></path>
+          </svg>
+          <span class="sidebar-text whitespace-nowrap">Customers</span>
+        </a>
+        <a
+          href="./report.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-blue-50 text-blue-600 font-medium group transition-colors"
+        >
+          <svg
+            class="w-5 h-5 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+            ></path>
+          </svg>
+          <span class="sidebar-text whitespace-nowrap">Report</span>
+        </a>
+      </nav>
+
+      <!-- User Profile -->
+      <div class="p-4 border-t border-slate-100">
+        <a href="#" class="flex items-center gap-3 group">
+          <div
+            class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden shrink-0 border border-slate-300"
+          >
+            <img
+              src="https://api.dicebear.com/6.x/initials/svg?seed=JD&backgroundColor=1D5FE0&textColor=ffffff"
+              alt="User"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="sidebar-text overflow-hidden">
+            <p
+              class="text-sm font-bold text-ink-900 truncate group-hover:text-blue-600 transition-colors"
+            >
+              John Doe
+            </p>
+            <p class="text-xs text-slate-500 truncate">Fleet Manager</p>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main
+      class="p-2 flex-1 flex flex-col h-full overflow-hidden bg-slate-50/50"
+    >
+      <!-- Topbar -->
+      <header
+        class="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-white shrink-0 rounded-t-xl"
+      >
+        <div class="flex items-center gap-4">
+          <button
+            id="sidebar-toggle"
+            class="p-1.5 rounded-lg text-slate-400 hover:text-ink-900 hover:bg-slate-100 transition-colors lg:hidden"
+            aria-label="Toggle Sidebar"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+          <h2 class="font-heading font-black text-xl text-ink-900">
+            Analytics & Reports
+          </h2>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2">
+            <button class="bg-white border border-slate-200 text-slate-600 hover:text-ink-900 hover:bg-slate-50 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              Export PDF
+            </button>
+            <button class="bg-blue-50 border border-blue-100 text-blue-600 hover:bg-blue-100 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              Export CSV
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="flex-1 overflow-y-auto p-6 md:p-8 space-y-8">
+        
+        <!-- KPI Summary Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm relative overflow-hidden">
+            <div class="absolute right-0 top-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 pointer-events-none"></div>
+            <p class="text-sm font-medium text-slate-500 mb-1">Total Trips (YTD)</p>
+            <p class="text-2xl font-black font-heading text-ink-900 mb-2">1,248</p>
+            <div class="flex items-center gap-1.5 text-green-600 text-xs font-bold">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+              <span>+14.5% vs last year</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm relative overflow-hidden">
+            <div class="absolute right-0 top-0 w-24 h-24 bg-gold-50 rounded-bl-full -mr-4 -mt-4 opacity-50 pointer-events-none"></div>
+            <p class="text-sm font-medium text-slate-500 mb-1">Fleet Utilization</p>
+            <p class="text-2xl font-black font-heading text-ink-900 mb-2">87.5%</p>
+            <div class="flex items-center gap-1.5 text-green-600 text-xs font-bold">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+              <span>+2.1% vs last month</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm relative overflow-hidden">
+            <div class="absolute right-0 top-0 w-24 h-24 bg-red-50 rounded-bl-full -mr-4 -mt-4 opacity-50 pointer-events-none"></div>
+            <p class="text-sm font-medium text-slate-500 mb-1">Maintenance Costs</p>
+            <p class="text-2xl font-black font-heading text-ink-900 mb-2">₹1.4M</p>
+            <div class="flex items-center gap-1.5 text-red-600 text-xs font-bold">
+              <svg class="w-3 h-3 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+              <span>-5.2% vs last quarter</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm relative overflow-hidden">
+            <div class="absolute right-0 top-0 w-24 h-24 bg-purple-50 rounded-bl-full -mr-4 -mt-4 opacity-50 pointer-events-none"></div>
+            <p class="text-sm font-medium text-slate-500 mb-1">Active Contracts</p>
+            <p class="text-2xl font-black font-heading text-ink-900 mb-2">89</p>
+            <div class="flex items-center gap-1.5 text-green-600 text-xs font-bold">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+              <span>+8 new this month</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Graph Section -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+          <div class="p-5 md:p-6 border-b border-slate-200 flex items-center justify-between">
+            <h3 class="font-bold text-ink-900 text-lg">Growth & Operations Overview</h3>
+            <select class="bg-slate-50 border border-slate-200 text-slate-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2 outline-none cursor-pointer">
+              <option>Last 6 Months</option>
+              <option>This Year</option>
+              <option>Last Year</option>
+            </select>
+          </div>
+          <div class="p-6 h-[400px]">
+            <canvas id="growthChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Truck Maintenance Report Table -->
+        <section class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+          <div class="p-5 md:p-6 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <h3 class="font-bold text-ink-900 text-lg">Truck Maintenance Report</h3>
+            <button class="text-blue-600 hover:text-blue-800 font-bold text-sm transition-colors flex items-center justify-center gap-1">
+              View Complete Log
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse whitespace-nowrap">
+              <thead>
+                <tr class="bg-slate-50 text-slate-500 text-xs uppercase tracking-wider border-b border-slate-200">
+                  <th class="px-6 py-4 font-bold">Vehicle ID</th>
+                  <th class="px-6 py-4 font-bold">Maintenance Type</th>
+                  <th class="px-6 py-4 font-bold">Service Date</th>
+                  <th class="px-6 py-4 font-bold">Status</th>
+                  <th class="px-6 py-4 font-bold">Cost</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 text-sm">
+                <tr class="hover:bg-slate-50/50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-ink-900">FL-08</td>
+                  <td class="px-6 py-4 text-slate-600">Engine Overhaul</td>
+                  <td class="px-6 py-4 text-slate-500">28 Sep, 2026</td>
+                  <td class="px-6 py-4">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-gold-50 text-gold-600 border border-gold-200">
+                      <span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span>
+                      In Progress
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 font-medium text-ink-900">₹85,000</td>
+                </tr>
+                <tr class="hover:bg-slate-50/50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-ink-900">TR-042</td>
+                  <td class="px-6 py-4 text-slate-600">Oil & Filter Change</td>
+                  <td class="px-6 py-4 text-slate-500">25 Sep, 2026</td>
+                  <td class="px-6 py-4">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-green-50 text-green-700 border border-green-200">
+                      <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                      Completed
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 font-medium text-ink-900">₹12,500</td>
+                </tr>
+                <tr class="hover:bg-slate-50/50 transition-colors">
+                  <td class="px-6 py-4 font-bold text-ink-900">CR-250</td>
+                  <td class="px-6 py-4 text-slate-600">Hydraulic Inspection</td>
+                  <td class="px-6 py-4 text-slate-500">20 Sep, 2026</td>
+                  <td class="px-6 py-4">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-green-50 text-green-700 border border-green-200">
+                      <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                      Completed
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 font-medium text-ink-900">₹45,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      // Initialize Chart.js Bar Chart
+      document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('growthChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['April', 'May', 'June', 'July', 'August', 'September'],
+            datasets: [
+              {
+                label: 'Vehicles',
+                data: [15, 18, 20, 22, 22, 25],
+                backgroundColor: '#1D5FE0',
+                borderRadius: 4
+              },
+              {
+                label: 'Customers',
+                data: [40, 45, 48, 50, 52, 54],
+                backgroundColor: '#D4A017',
+                borderRadius: 4
+              },
+              {
+                label: 'Drivers',
+                data: [20, 22, 25, 28, 30, 32],
+                backgroundColor: '#475569',
+                borderRadius: 4
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  usePointStyle: true,
+                  padding: 20,
+                  font: {
+                    family: "'Inter', sans-serif"
+                  }
+                }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                grid: {
+                  color: '#f1f5f9',
+                  drawBorder: false
+                },
+                ticks: {
+                  font: {
+                    family: "'Inter', sans-serif"
+                  }
+                }
+              },
+              x: {
+                grid: {
+                  display: false
+                },
+                ticks: {
+                  font: {
+                    family: "'Inter', sans-serif"
+                  }
+                }
+              }
+            }
+          }
+        });
+      });
+    </script>
+    <script src="./erp.js"></script>
+  </body>
+</html>
+

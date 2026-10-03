@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Rudra Heavy Lifters</title>
+    <meta
+      name="description"
+      content="Learn more about Rudra Heavy Lifters, our history, our values, and our commitment to powering Gujarat's heavy lifting industry."
+    />
+
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              blue: {
+                50: "#EEF3FF",
+                600: "#1D5FE0",
+                800: "#0B3B8C",
+              },
+              gold: {
+                100: "#FBF1DA",
+                500: "#D4A017",
+              },
+              ink: {
+                400: "#94A3B8",
+                600: "#475569",
+                900: "#0F172A",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Space Grotesk", "sans-serif"],
+            },
+            boxShadow: {
+              "soft-blue": "0 10px 40px -10px rgba(29, 95, 224, 0.15)",
+              glow: "0 0 20px rgba(212, 160, 23, 0.4)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body
+    class="bg-white text-ink-600 font-sans antialiased overflow-x-hidden selection:bg-blue-600 selection:text-white"
+  >
+    <!-- Header / Navigation -->
+    <header
+      id="navbar"
+      class="fixed top-0 w-full z-[70] transition-all duration-300 py-4 bg-transparent border-b border-transparent"
+    >
+      <div
+        class="container mx-auto px-6 md:px-12 flex justify-between items-center"
+      >
+        <a href="#" class="flex items-center gap-3 z-50 group">
+          <div
+            class="relative w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center border-2 border-blue-50 group-hover:border-blue-600 transition-colors"
+          >
+            <img
+              src="./assets/logo.png"
+              alt="RHL Logo"
+              class="h-8 w-8 object-contain"
+            />
+          </div>
+          <span
+            class="font-heading font-black text-xl text-ink-900 tracking-tight group-hover:text-blue-600 transition-colors"
+            >Rudra Heavy Lifters</span
+          >
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+          <a
+            href="./index.html"
+            class="text-sm font-semibold text-ink-900 hover:text-blue-600 transition-colors"
+            >Home</a
+          >
+          <a
+            href="./about.html"
+            class="text-sm font-semibold text-ink-900 hover:text-blue-600 transition-colors"
+            >About</a
+          >
+          <a
+            href="./services.html"
+            class="text-sm font-semibold text-ink-900 hover:text-blue-600 transition-colors"
+            >Services</a
+          >
+          <a
+            href="machinery.html"
+            class="text-sm font-semibold text-ink-900 hover:text-blue-600 transition-colors"
+            >Machinery</a
+          >
+          <a
+            href="./contact.html"
+            class="text-sm font-semibold text-ink-900 hover:text-blue-600 transition-colors"
+            >Contact</a
+          >
+          <a
+            href="./contact.html#quote"
+            class="bg-blue-600 text-white px-7 py-3 rounded-full text-sm font-bold hover:bg-blue-800 hover:shadow-soft-blue transition-all duration-300 transform hover:-translate-y-0.5 ml-2"
+            >Get a Quote</a
+          >
+        </nav>
+
+        <button
+          id="mobile-menu-btn"
+          class="lg:hidden z-50 text-ink-900 p-2 focus:outline-none"
+          aria-label="Toggle Menu"
+        >
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="menu-icon"
+          >
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+
+      <!-- Mobile Nav Drawer -->
+      <div
+        id="mobile-drawer"
+        class="fixed top-0 left-0 w-full h-[100dvh] bg-white z-[60] transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-center items-center gap-8 shadow-2xl"
+      >
+        <a
+          href="./index.html"
+          class="mobile-link text-3xl font-heading font-bold text-ink-900"
+          >Home</a
+        >
+        <a
+          href="./about.html"
+          class="mobile-link text-3xl font-heading font-bold text-ink-900"
+          >About</a
+        >
+        <a
+          href="./services.html"
+          class="mobile-link text-3xl font-heading font-bold text-ink-900"
+          >Services</a
+        >
+        <a
+          href="./machinery.html"
+          class="mobile-link text-3xl font-heading font-bold text-ink-900"
+          >Machinery</a
+        >
+        <a
+          href="./contact.html"
+          class="mobile-link text-3xl font-heading font-bold text-ink-900"
+          >Contact</a
+        >
+        <a
+          href="./contact.html#quote"
+          class="mobile-link mt-4 bg-blue-600 text-white px-10 py-4 rounded-full text-lg font-bold shadow-soft-blue"
+          >Get a Quote</a
+        >
+      </div>
+    
+
+    <!-- Page Hero -->
+    <section
+      class="relative pt-40 pb-24 bg-blue-50 hero-bg overflow-hidden border-b border-slate-100"
+    >
+      <!-- Abstract shape -->
+      <div
+        class="absolute -top-24 -right-24 w-[30rem] h-[30rem] bg-blue-600 rounded-full blur-[100px] opacity-[0.05]"
+      ></div>
+
+      <div class="container mx-auto px-6 md:px-12 relative z-10">
+        <div class="max-w-4xl mx-auto text-center reveal-up">
+          <div
+            class="hero-elem inline-flex mb-6 px-4 py-2 rounded-full bg-gold-100 text-gold-500 font-bold text-xs sm:text-sm tracking-wider uppercase border border-gold-500/20"
+          >
+            Our Story
+          </div>
+          <h1
+            class="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-ink-900 mb-8 leading-[1.1] tracking-tight"
+          >
+            Building the Foundation of
+            <span class="text-blue-600">Gujarat's Progress.</span>
+          </h1>
+          <p
+            class="text-lg md:text-xl text-ink-600 leading-relaxed font-medium"
+          >
+            Since 2008, Rudra Heavy Lifters has stood as a symbol of structural
+            integrity and operational precision, supporting the state's most
+            critical industrial and infrastructure projects.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Journey -->
+    <section class="py-24 bg-white relative">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="relative reveal-up lg:order-2">
+            <img
+              src="./assets/crane.jpg"
+              alt="Industrial Yard"
+              class="w-full h-auto rounded-3xl shadow-xl object-cover"
+            />
+            <div
+              class="absolute -right-8 -top-8 w-32 h-32 bg-gold-100 rounded-full mix-blend-multiply opacity-70 -z-10 blur-xl"
+            ></div>
+            <div
+              class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-blue-50 hidden md:flex items-center gap-4"
+            >
+              <div class="text-4xl font-heading font-black text-blue-600">
+                15+
+              </div>
+              <div class="text-sm text-ink-600 font-bold uppercase">
+                Years of<br />Excellence
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal-up lg:order-1">
+            <h2 class="font-heading text-4xl font-black text-ink-900 mb-8">
+              Our Journey to the Top.
+            </h2>
+            <div
+              class="space-y-6 text-ink-600 text-lg leading-relaxed font-medium"
+            >
+              <p>
+                Rudra Heavy Lifters was founded in Anjar with a singular vision:
+                to provide unparalleled lifting and logistics solutions to the
+                rapidly expanding industrial sectors of Gujarat.
+              </p>
+              <p>
+                What started as a modest fleet has grown into an extensive
+                arsenal of state-of-the-art mobile cranes, hydra trucks, and
+                heavy transport vehicles. Today, we are proud to be the trusted
+                partners for leading names across the industrial landscape.
+              </p>
+              <p>
+                Our growth is a testament to our unwavering commitment to
+                safety, continuous technological upgrades, and the sheer
+                dedication of our certified operators who ensure every lift goes
+                exactly as planned.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="py-24 bg-slate-50 border-y border-slate-200">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
+          <h2
+            class="font-heading text-4xl md:text-5xl font-black text-ink-900 mb-6"
+          >
+            Our Core Values
+          </h2>
+          <p class="text-lg text-ink-600 font-medium">
+            The principles that guide our operations and define our success in
+            every project we undertake.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+          <div
+            class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:shadow-soft-blue transition-all duration-300 transform hover:-translate-y-2 reveal-up"
+          >
+            <div
+              class="w-14 h-14 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.5"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-ink-900 mb-4">
+              Safety First
+            </h3>
+            <p class="text-ink-600 font-medium leading-relaxed">
+              Zero compromise on site safety. Every operation undergoes rigorous
+              planning and risk assessment.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:shadow-soft-blue transition-all duration-300 transform hover:-translate-y-2 reveal-up"
+            style="transition-delay: 100ms"
+          >
+            <div
+              class="w-14 h-14 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.5"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-ink-900 mb-4">
+              Operational Agility
+            </h3>
+            <p class="text-ink-600 font-medium leading-relaxed">
+              Rapid response times and 24/7 deployment capabilities to meet
+              critical industrial deadlines.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:shadow-soft-blue transition-all duration-300 transform hover:-translate-y-2 reveal-up"
+            style="transition-delay: 200ms"
+          >
+            <div
+              class="w-14 h-14 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-7 h-7"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.5"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-ink-900 mb-4">
+              Expert Team
+            </h3>
+            <p class="text-ink-600 font-medium leading-relaxed">
+              Our certified operators and riggers are the true strength behind
+              our machinery, delivering precision execution.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-24 bg-blue-600 text-white relative overflow-hidden">
+      <!-- Abstract shape -->
+      <div
+        class="absolute -top-24 -left-24 w-[30rem] h-[30rem] bg-blue-800 rounded-full blur-[100px] opacity-50"
+      ></div>
+
+      <div class="container mx-auto px-6 md:px-12 relative z-10">
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center reveal-up"
+        >
+          <div>
+            <div
+              class="font-heading text-5xl md:text-6xl font-black mb-2 flex justify-center items-baseline"
+            >
+              <span class="counter" data-target="15">0</span
+              ><span class="text-gold-500 text-4xl ml-1">+</span>
+            </div>
+            <div
+              class="text-sm font-bold uppercase tracking-wider text-blue-100"
+            >
+              Years Active
+            </div>
+          </div>
+          <div>
+            <div
+              class="font-heading text-5xl md:text-6xl font-black mb-2 flex justify-center items-baseline"
+            >
+              <span class="counter" data-target="50">0</span
+              ><span class="text-gold-500 text-4xl ml-1">+</span>
+            </div>
+            <div
+              class="text-sm font-bold uppercase tracking-wider text-blue-100"
+            >
+              Fleet Units
+            </div>
+          </div>
+          <div>
+            <div
+              class="font-heading text-5xl md:text-6xl font-black mb-2 flex justify-center items-baseline"
+            >
+              <span class="counter" data-target="120">0</span
+              ><span class="text-gold-500 text-4xl ml-1">+</span>
+            </div>
+            <div
+              class="text-sm font-bold uppercase tracking-wider text-blue-100"
+            >
+              Projects Delivered
+            </div>
+          </div>
+          <div>
+            <div
+              class="font-heading text-5xl md:text-6xl font-black mb-2 flex justify-center items-baseline"
+            >
+              <span class="counter" data-target="25">0</span
+              ><span class="text-gold-500 text-4xl ml-1">+</span>
+            </div>
+            <div
+              class="text-sm font-bold uppercase tracking-wider text-blue-100"
+            >
+              Cities Served
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink-900 text-slate-400 py-16 md:py-20">
+      <div class="container mx-auto px-6 md:px-12">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 pb-12 border-b border-slate-800"
+        >
+          <!-- Brand -->
+          <div class="lg:col-span-1">
+            <a href="./index.html" class="flex items-center gap-3 mb-6">
+              <div
+                class="w-10 h-10 bg-white rounded-full flex items-center justify-center"
+              >
+                <img
+                  src="./assets/logo.png"
+                  alt="RHL Logo"
+                  class="h-6 w-6 object-contain"
+                />
+              </div>
+              <span
+                class="font-heading font-black text-2xl text-white tracking-tight"
+                >Rudra Heavy Lifters</span
+              >
+            </a>
+            <p class="text-sm leading-relaxed font-medium mb-8">
+              Gujarat's trusted partner in heavy equipment lifting, transport,
+              and logistics. Safety, precision, and power since 2008.
+            </p>
+            <div class="flex gap-4">
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/rudra_.heavy_.lifters/"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-colors"
+                aria-label="Facebook"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <h4
+              class="text-white font-bold text-lg mb-6 font-heading tracking-wide"
+            >
+              Company
+            </h4>
+            <ul class="space-y-4 text-sm font-medium">
+              <li>
+                <a
+                  href="./about.html"
+                  class="hover:text-gold-500 transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./services.html"
+                  class="hover:text-gold-500 transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./machinery.html"
+                  class="hover:text-gold-500 transition-colors"
+                  >Machinery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./contact.html"
+                  class="hover:text-gold-500 transition-colors"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-gold-500 transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4
+              class="text-white font-bold text-lg mb-6 font-heading tracking-wide"
+            >
+              Services
+            </h4>
+            <ul class="space-y-4 text-sm font-medium">
+              <li>
+                <a
+                  href="./services.html#crane-rent"
+                  class="hover:text-gold-500 transition-colors"
+                  >Crane Rental</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./services.html#rigging"
+                  class="hover:text-gold-500 transition-colors"
+                  >Rigging</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./services.html#transportation"
+                  class="hover:text-gold-500 transition-colors"
+                  >Transportation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./services.html#heavy-loading"
+                  class="hover:text-gold-500 transition-colors"
+                  >Heavy Loading</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./services.html#forklifting"
+                  class="hover:text-gold-500 transition-colors"
+                  >Forklifting</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact info -->
+          <div>
+            <h4
+              class="text-white font-bold text-lg mb-6 font-heading tracking-wide"
+            >
+              Reach Us
+            </h4>
+            <ul class="space-y-4 text-sm font-medium">
+              <li class="flex gap-3">
+                <svg
+                  class="w-5 h-5 shrink-0 text-slate-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                </svg>
+                <span
+                  >Crystal Arcade, Mundra Rode, Meghpar - Anjar, Gujarat
+                  370110</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <svg
+                  class="w-5 h-5 shrink-0 text-slate-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  ></path>
+                </svg>
+                <span>+91 98765 43210</span>
+              </li>
+              <li class="flex gap-3">
+                <svg
+                  class="w-5 h-5 shrink-0 text-slate-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                <span>info@rhl.in</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-sm font-medium"
+        >
+          <p>&copy; 2026 Rudra Heavy Lifters. All rights reserved.</p>
+          <p>
+            Designed by
+            <a
+              href="https://www.instagram.com/iamankusingh/"
+              target="_blank"
+              class="underline"
+              >Anku Singh</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

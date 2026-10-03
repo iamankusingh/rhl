@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+  overflow-x: hidden;
+  cursor: default;
+}
+
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.hero-bg {
+    background-image:
+        radial-gradient(circle at 90% 10%,
+            rgba(29, 95, 224, 0.08) 0%,
+            transparent 40%),
+        linear-gradient(to bottom, #ffffff, #eef3ff);
+}
+
+.dashed-connector {
+    background-image: linear-gradient(to bottom,
+            #1d5fe0 50%,
+            transparent 50%);
+    background-size: 2px 16px;
+    background-repeat: repeat-y;
+}
